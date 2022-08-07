@@ -31,7 +31,7 @@ app.get('/notes', (req, res) => {
 });
 
 app.get('/api/notes', (req, res) => {
-   res.json(noteData);
+   res.json(JSON.parse(fs.readFileSync("./db/db.json")));
 });
 
 // POST routes
@@ -42,16 +42,43 @@ app.post('/api/notes', (req, res) => {
 
     let newNote = req.body;
 
+    const updatedData = JSON.parse(fs.readFileSync("./db/db.json"));
+
     // assign id parameter in new note
     newNote.id = noteData.length;
     
     // Push new note to note data file
-    noteData.push(newNote);
+    updatedData.push(newNote);
+
+    // Update index
+    updatedData.forEach(element => element.id = updatedData.indexOf(element));    
 
     // Writes note data with updated notes
-    fs.writeFile('./db/db.json', JSON.stringify(noteData), (err) => {
+    fs.writeFileSync('./db/db.json', JSON.stringify(updatedData), (err) => {
         if (err) throw err;
         console.log('Notes updated');
+    });
+
+    // updates page
+    res.json(noteData);
+});
+
+// Delete routes
+app.delete('/api/notes/:id', (req, res) => {
+    // Log that a delete request has been received
+    console.info(`${req.method} request received`);
+    let id = JSON.parse(req.params.id);
+
+    // Remove item with id to delete
+    let deleteData = (JSON.parse(fs.readFileSync("./db/db.json"))).filter(item => item.id != id);    
+
+    // Update index
+    deleteData.forEach(element => element.id = deleteData.indexOf(element));
+
+    // Writes note data with updated notes
+    fs.writeFileSync('./db/db.json', JSON.stringify(deleteData), (err) => {
+        if (err) throw err;
+        console.log('Note deleted');
     });
 
     // updates page
