@@ -5,7 +5,7 @@ const fs = require('fs');
 
 // Require JSON file and assign to noteData
 const noteData = require('./db/db.json');
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Initialize app variable
 const app = express();
