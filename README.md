@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+# Note Taker
 
-You can use the [editor on GitHub](https://github.com/patrickthegu/c11-note-taker/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-### Markdown
+## Table of Contents
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[Description](#description)
 
-```markdown
-Syntax highlighted code block
+[Installation Instructions](#installation)
 
-# Header 1
-## Header 2
-### Header 3
+[Usage Instructions](#usage)
 
-- Bulleted
-- List
+[License](#license)
 
-1. Numbered
-2. List
+[Github](#github)
 
-**Bold** and _Italic_ and `Code` text
+## Description
 
-[Link](url) and ![Image](src)
-```
+An application that allows a user to save, delete and store notes online.
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/patrickthegu/c11-note-taker/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Installation Instructions
 
-### Support or Contact
+Download from Github and navigate to directory
+run npm i to install dependencies
+run npm start
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+alternately access from Heroku Link
+
+## Usage Instructions
+
+From the home page click Get Started to direct to the notes page
+To access a saved note, click on the note in the left column
+To create a new note, click the plus button, enter Note title and text then click save
+To delete a note, click the trash icon next to the saved note
+
+![Result](screenshots/scr1.png)
+
+## License
+
+[Apache License 2.0](https://opensource.org/licenses/Apache-2.0)
+
+## Github
+
+[patrickthegu](https://github.com/patrickthegu)
+
